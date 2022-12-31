@@ -14,13 +14,12 @@ func Input() int {
 	return n
 }
 
-func InputNumList() []int {
+func InputNumList(n int) []int {
 	sc := bufio.NewScanner(os.Stdin)
 	sc.Split(bufio.ScanWords)
-	var nums []int
-	n := nextInt(sc)
+	nums := make([]int, n)
 	for i := 0; i < n; i++ {
-		nums = append(nums, nextInt(sc))
+		nums[i] = nextInt(sc)
 	}
 	return nums
 }
